@@ -60,7 +60,7 @@ ui <- fluidPage(
   tags$head(tags$style(css)),
   sidebarLayout(
     sidebarPanel(
-      textInput("apiKey", "API Key", "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"),
+      textInput("apiKey", "API Key", "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"),
       selectInput("model", "Model", choices = c("gpt-3.5-turbo", "gpt-4"), selected = "gpt-3.5-turbo"),
       style = "background-color: #fff; color: #333; border: 1px solid #ccc;"
     ),
@@ -166,7 +166,6 @@ server <- function(input, output, session) {
 }
 
 
-# Run the application
 shinyApp(ui=ui, server=server)
 
 
