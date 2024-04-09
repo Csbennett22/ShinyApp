@@ -10,6 +10,12 @@ if (!requireNamespace("shinyCopy2clipboard", quietly = TRUE)) {
   remotes::install_github("deepanshu88/shinyCopy2clipboard")
 }
 
+# Load secrets
+source("secrets.R")
+
+# Use the API key
+apiKey <- openai_api_key
+
 css <- sass(sass_file("www/chat.scss"))
 jscode <- 'var container = document.getElementById("chat-container");
 if (container) {
@@ -60,7 +66,7 @@ ui <- fluidPage(
   tags$head(tags$style(css)),
   sidebarLayout(
     sidebarPanel(
-      textInput("apiKey", "API Key", "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"),
+      textInput("apiKey", "API Key", apiKey),
       selectInput("model", "Model", choices = c("gpt-3.5-turbo", "gpt-4"), selected = "gpt-3.5-turbo"),
       style = "background-color: #fff; color: #333; border: 1px solid #ccc;"
     ),
