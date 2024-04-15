@@ -1,1 +1,5 @@
-secrets.R
+/assets
+
+recipe_embeddings.rds
+
+text_df.rds
